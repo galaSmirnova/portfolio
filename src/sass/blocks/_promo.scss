@@ -3,16 +3,20 @@
     position: relative;
     background: url('../img/main_bg.jpg') no-repeat 50%/cover;
     padding-top: 205px;
+
     &__subtitle {
         padding-left: 10px;
         position: relative;
         @include before_circle;
         z-index: 2;
+        
     }
+
     &__title {
         width: 535px;
-        margin-top: 10px;        
+        padding-top: 9px;
     }
+
     &__btns {
         margin-top: 25px;
         display: flex;
@@ -20,12 +24,31 @@
         justify-content: space-between;
         width: 250px;
     }
-    &__link {
+
+    a.promo__link {
         color: #000;
         font-weight: bold;
-        &:hover {                        
-            color: #000;
-            text-decoration: none;
-        }
-    }    
+        position: relative;
+        text-decoration: none;
+    }
+
+    a.promo__link:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: $main-color;
+        transform-origin: bottom right;
+        transition: transform 0.5s ease-out;
+    }
+
+    a.promo__link:hover:after {
+        color: #000;
+        text-decoration: none;
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
 }

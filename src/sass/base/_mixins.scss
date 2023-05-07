@@ -11,3 +11,19 @@
         z-index: -1;
     }
 }
+
+
+@mixin section_header_title {
+    position: relative;
+    text-align: center;
+    @include before_circle;
+
+    &:before {
+        left: 50%;
+        transform: translate(-50%);
+    }
+}
+
+@mixin section_header_subtitle {
+    text-align: center;   
+}
